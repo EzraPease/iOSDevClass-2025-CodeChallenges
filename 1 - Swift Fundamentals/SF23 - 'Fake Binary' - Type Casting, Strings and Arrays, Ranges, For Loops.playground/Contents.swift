@@ -17,3 +17,9 @@
     //  Add three more parameters to your function; one that defines the mid-point (5 in the above instructions), and one that defines what to replace each digit with (0 and 1 in the above examples)
 
 import Foundation
+
+func convertToBinary(numberString: String) -> String {
+    
+}
+
+
