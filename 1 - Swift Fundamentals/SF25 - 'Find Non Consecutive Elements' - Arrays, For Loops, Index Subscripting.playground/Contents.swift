@@ -23,3 +23,26 @@
         //  Output: [[1,2,3], [5,6,7], [9,10,11]]
 
 import Foundation
+
+
+func findUnconsecutiveInt(in checkArray: [Int]) -> Int? {
+    var storedValue: Int = checkArray[0]
+    
+    for checkArray in checkArray[1...] {
+        if checkArray - 1 == storedValue {
+            storedValue = checkArray
+        } else if checkArray - 1 != storedValue {
+            return checkArray
+        }
+    }
+    return nil
+}
+
+let testArray1: [Int] = [1, 2, 3, 4, 6, 7, 8, 9, 10] //Should return 6
+let testArray2: [Int] = [-5, -4, -3, -1] //Should return -1
+let testArray3: [Int] = [1, 2, 3, 4, 5] //Should return nil
+
+
+print(findUnconsecutiveInt(in: testArray1))
+print(findUnconsecutiveInt(in: testArray2))
+print(findUnconsecutiveInt(in: testArray3))
