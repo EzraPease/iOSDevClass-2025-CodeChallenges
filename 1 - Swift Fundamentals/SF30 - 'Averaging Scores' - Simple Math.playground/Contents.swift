@@ -19,3 +19,26 @@
     //  Create a function that not only calculates the average and rounds down, but also returns the highest and lowest values in the array.
 
 import Foundation
+
+
+func gradeAverage(grades gradeList: [Int]) -> (Int, Int?) {
+    var result = 0.0
+    for gradeList in gradeList {
+        result += Double(gradeList)
+    }
+    result = (result / Double(gradeList.count)).rounded(.down)
+    print("Your grade average is: \(result)")
+    
+    let sortedList = gradeList.sorted { $0 > $1 }
+    return (sortedList[0], sortedList.last)
+}
+
+
+let myGrades = [85, 97, 74, 83, 92, 82, 78, 71]
+
+print(gradeAverage(grades: myGrades))
+
+
+
+
+
