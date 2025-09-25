@@ -26,3 +26,23 @@
     //  Make another function with the same goal, but which accepts an array of integers as a parameter and prints the tables for each integer in the array.
 
 import Foundation
+
+
+func multiplicationTable(of input: Int) {
+    for timesBy in 1...10 {
+        print("\(timesBy) * \(input) = \(timesBy * input)\n")
+    }
+}
+
+func arrayMultiplicationTable(of input: [Int]) {
+    for input in input {
+        for timesBy in 1...10 {
+            print("\(timesBy) * \(input) = \(timesBy * input)\n")
+        }
+    }
+}
+
+let myArray = [1, 2, 3]
+
+multiplicationTable(of: 5)
+arrayMultiplicationTable(of: myArray)
