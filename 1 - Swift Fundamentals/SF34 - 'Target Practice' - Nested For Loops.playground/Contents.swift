@@ -22,3 +22,23 @@
     //  There is another solution to this problem that does not take as long, though it may be difficult at this stage in your progress to know how to code it. In a comment, brainstorm how that secondary solution might work.
 
 import Foundation
+
+
+let nums = [1, 2, 3, 4, 5]
+
+
+func indicies(array: [Int], target: Int) -> [Int]? {
+    guard array.count > 1 else { return nil }
+    
+    for (index, currentValue) in array.enumerated() {
+        let difference = target - currentValue
+        
+        if let pairIndex = array.firstIndex(of: difference) {
+            return [index, pairIndex]
+        }
+    }
+    print("No valid result pair")
+    return nil
+}
+
+print(indicies(array: nums, target: 6))
