@@ -17,3 +17,33 @@
     //  This is an article with complicated computer science theory; you do not need to understand the entire history of computing after reading one Wiki page. Take notes in a comment in this challenge on what you do glean and learn about the different sorting algorithms as you skim through.
 
 import Foundation
+
+
+func bubbleSort(sort inputedArray: [Int]) -> [Int] {
+    var sortedArray = inputedArray
+    var sortingCount = 1
+    
+    while sortingCount < sortedArray.count - 1 {
+    for (index, value) in sortedArray.enumerated() {
+        if index + 1 >= sortedArray.count {
+            break
+        } else {
+            if value < sortedArray[index + 1] {
+                sortedArray.insert(value, at: index + 1)
+                sortedArray.remove(at: index)
+            } else {
+                sortingCount += 1
+            }
+        }
+        print("Sorting Count: \(sortingCount)")
+        print("Value: \(value)")
+    }
+}
+    return sortedArray
+}
+
+
+var myArray = [4, 3, 2, 1]
+
+print(bubbleSort(sort: myArray))
+
