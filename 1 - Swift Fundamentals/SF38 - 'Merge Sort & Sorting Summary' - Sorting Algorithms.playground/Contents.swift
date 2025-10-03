@@ -15,6 +15,11 @@
 
 /*
  Merge Sorts are more efficient because...
+ - It divides and conqures, allowing for a generally even workload
  
  We need to learn about sorting algorithms so that...
+ - We have multiple ways to solve a variety of issues we come across.
+ 
+ 1. Other sorting algorithms were left to right, "Merge Sort" does everything almost all at once
+ 2. .sort() is great, but sometimes there will be a better way to go about solving a problem that requires sorting
  */
