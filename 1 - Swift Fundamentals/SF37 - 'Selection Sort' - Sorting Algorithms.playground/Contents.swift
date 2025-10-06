@@ -15,3 +15,29 @@
     //  Like before, you are not expected to understand every element of the page, but take notes in a comment on this challenge about what you can glean from the information.
 
 import Foundation
+
+func insertionSorting(sort array: [Int]) -> [Int] {
+    var currentValue = 0
+    var variableArray = array
+    
+    guard array.count > 1 else { return array }
+    
+    for (index, mainLoopValue) in variableArray.enumerated() {
+        
+            currentValue = mainLoopValue
+        
+        for (subIndex, subLoop) in variableArray.enumerated() {
+            if currentValue <= subLoop {
+                currentValue = subLoop
+                variableArray.swapAt(index, subIndex)
+            }
+        }
+    }
+    return variableArray
+}
+
+
+
+let myArray = [3, 6, 1, 5, -1, -17, 2005, 9]
+
+print(insertionSorting(sort: myArray))
