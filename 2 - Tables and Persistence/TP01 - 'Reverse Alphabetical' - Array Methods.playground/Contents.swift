@@ -14,3 +14,23 @@
     //  Output: ["llji", "obb", "yslla"]
 
 import Foundation
+
+func reverseAlphabetical(sort arrayInput: [String]) -> [String] {
+    var variableArray = arrayInput
+    var blackDiamondSortedArray: [String] = []
+    
+    for variableArray in variableArray {
+        let sortedString = String(variableArray.lowercased().sorted(by: >))
+        
+        blackDiamondSortedArray.append(sortedString)
+    }
+    blackDiamondSortedArray.sort(by: >)
+    return blackDiamondSortedArray
+}
+
+let myArray = ["Abc", "def", "ghi", "jkl"]
+let mySecondArray = ["s;dflakj", "afiefnnsaf", "Ezra", "bob", "Max", "independant"]
+
+
+print(reverseAlphabetical(sort: myArray))
+print(reverseAlphabetical(sort: mySecondArray))
