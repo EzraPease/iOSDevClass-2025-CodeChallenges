@@ -42,18 +42,18 @@ func compareSeparateArrayValues(_ array1: [String], to array2: [String]) -> [Str
 
 func compareDuplicateArrayValues(_ array1: [String], to array2: [String]) -> [String] {
     
-    var uniqueValues: [String] = []
+    var notUniqueValues: [String] = []
     
     for value1 in array1 {
         if array2.contains(value1) {
-            uniqueValues.append(value1)
+            notUniqueValues.append(value1)
         }
     }
-    guard uniqueValues.count > 0 else {
+    guard notUniqueValues.count > 0 else {
         print("No Matching Values")
         return array1
     }
-    return uniqueValues
+    return notUniqueValues
 }
 
 //func setBlackDiamond(_ set1: Set<String>, to set2: Set<String>) -> Set<String> {
@@ -70,4 +70,4 @@ print(compareDuplicateArrayValues(["Ezra", "Michael", "Food", "Apple"], to: ["Mi
 
 //let setA: Set = ["Ezra", "Bob", "Tomato", "Giant", "Snow"]
 //let setB: Set = ["Tomato", "Snow", "Bob"]
-//print(setBlackDiamond(setA, to: setB))
+    //print(setBlackDiamond(setA, to: setB))
