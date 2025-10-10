@@ -17,3 +17,23 @@
     //  Order your output dictionary by frequency.
 
 import Foundation
+
+
+func checkWordFrequency(in stringCheck: String) -> [String: Int] {
+    var result: [String: Int] = [:]
+    let upperCaseStringCheck = stringCheck
+        .uppercased()
+        .split(whereSeparator: \.isWhitespace)
+        .map(String.init)
+    
+    for wordCheck in upperCaseStringCheck {
+        result[wordCheck, default: 0] += 1
+    }
+    
+    print(result)
+    return result
+}
+
+
+let myString1 = "The apple ate the seed on the ground and became a mutated tree because of the seed"
+checkWordFrequency(in: myString1)
