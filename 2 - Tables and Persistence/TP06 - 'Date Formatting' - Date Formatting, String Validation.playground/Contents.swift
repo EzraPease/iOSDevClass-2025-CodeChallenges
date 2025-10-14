@@ -18,5 +18,15 @@
 import Foundation
 
 func convertToDate(_ dateString: String) -> Date? {
-    return nil
+    let formatter = DateFormatter()
+    formatter.dateFormat = "yyyy-MM-dd"
+    
+    let date = formatter.date(from: dateString)
+    
+    print(date)
+    return date
 }
+
+
+convertToDate("2001-10-13")
+convertToDate("200-100-131")
