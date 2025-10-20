@@ -21,7 +21,7 @@ import Foundation
 
 func printCountOfEachLetter1(in string: String) {
     var countsByLetter = [Character : Int]()
-    for character in string {
+    for character in string where character.isLetter {
         countsByLetter[character, default: 0] += 1
     }
     for (letter, count) in countsByLetter {
@@ -30,3 +30,4 @@ func printCountOfEachLetter1(in string: String) {
 }
 
 printCountOfEachLetter1(in: "pepper")
+printCountOfEachLetter1(in: "123hi")

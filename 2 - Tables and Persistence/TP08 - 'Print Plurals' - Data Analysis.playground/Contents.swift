@@ -22,3 +22,22 @@
     //  Output: Apples, Oranges, Pineapples, Bananas, Grapes
 
 import Foundation
+
+
+func findPlurals(array stringList: [String]) {
+//    var results: [String] = []
+    
+    for pluralCheck in stringList {
+        var varPluralCheck = pluralCheck
+        varPluralCheck = pluralCheck.lowercased()
+        
+        if varPluralCheck.hasSuffix("s") {
+//            results.append(varPluralCheck)
+            print(varPluralCheck)
+        }
+    }
+}
+
+
+let array1 = ["Apples", "Kangaroo", "Cherry", "Cats", "Dogs", "Goat", "Bears"]
+findPlurals(array: array1)
