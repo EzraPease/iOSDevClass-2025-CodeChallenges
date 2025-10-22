@@ -20,3 +20,42 @@
     //  "A man, a plan, a canal - panama!" is a famous palindrome by Leigh Mercer; Dan Hoey expanded it to 540 words: 🔗http://complex.gmu.edu/people/ernie/witty/Hoey_palindrome.html
 
 import Foundation
+
+
+func checkPalindrome(text textInput: String) -> Bool {
+    let reversedText = textInput.lowercased().reversed()
+    if textInput.lowercased() == String(reversedText) {
+        return true
+    }
+    return false
+}
+
+
+
+// BLACK DIAMOND
+func checkPhrasePalindrome(phrase textInput: String) -> Bool {
+    print("--------- START ---------")
+    let charactersToReplace = CharacterSet.punctuationCharacters.union(.whitespaces)
+    let trimmedText = textInput.components(separatedBy: charactersToReplace).joined()
+    print(trimmedText)
+    let reversedText = trimmedText.lowercased().reversed()
+    print(reversedText)
+    if trimmedText.lowercased() == String(reversedText) {
+        print("------ END ------")
+        return true
+    }
+    print("------ END ------")
+    return false
+}
+
+
+print(checkPalindrome(text: "rAcECar"))
+print(checkPalindrome(text: "Mom"))
+print(checkPalindrome(text: "apple"))
+
+print("---------------------")
+
+// BLACK DIAMOND
+print(checkPhrasePalindrome(phrase: "Taco Cat"))
+print(checkPhrasePalindrome(phrase: "Too bad I hid a boot."))
+print(checkPhrasePalindrome(phrase: "A man, a plan, a canal - panama!"))
