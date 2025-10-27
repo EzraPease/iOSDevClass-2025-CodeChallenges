@@ -14,3 +14,15 @@
     //  Create another function that can accept as input any string that has previously been returned and give you the original input string.
 
 import Foundation
+
+
+func removeSpaces(string: String) -> String {
+    let removeWhiteSpace = CharacterSet.whitespaces
+    let whiteSpaceRemoved = string.components(separatedBy: removeWhiteSpace).joined()
+    
+    return whiteSpaceRemoved
+}
+
+print(removeSpaces(string: "Hello World! I am Ezra"))
+
+
