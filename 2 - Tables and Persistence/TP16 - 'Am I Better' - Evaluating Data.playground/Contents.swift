@@ -17,3 +17,50 @@
     //  Create another function. This one should instead accept a dictionary with String keys and Int values. The strings represent the names of each of your classmates, and the integers are their scores. Return an array of the names of every classmate that you scored better than.
 
 import Foundation
+
+
+func amITheBest(myScore: Int, classScores: [Int]) -> Bool {
+    let highestScore = classScores.max() ?? 0
+    if highestScore < myScore {
+        print("Congrats!! You are the best! The highest score was \(highestScore), and yours was \(myScore)")
+        return true
+    }
+    print("You have failed to become the best, do better! The highest score was \(highestScore), and yours was \(myScore)")
+    return false
+}
+
+func listEachStudentIOutScored(myScore: Int, classScores: [String : Int]) -> [String] {
+    var studentsYouBeat: [String] = []
+    for index in classScores {
+        if index.value < myScore {
+            studentsYouBeat.append(index.key)
+        }
+    }
+    if studentsYouBeat.isEmpty {
+        print("Sorry, you did not out score anyone")
+        
+    } else {
+        print("You beat the following students: \(studentsYouBeat)")
+    }
+    return studentsYouBeat
+}
+
+
+let classScores = [80,39,90,88,68,78,39,99]
+let namedTestScores: [String: Int] = [
+    "Alice": 92,
+    "Brandon": 85,
+    "Chloe": 77,
+    "Derek": 88,
+    "Emilia": 95,
+    "Felix": 68,
+    "Grace": 73,
+    "Hector": 99
+]
+
+amITheBest(myScore: 98, classScores: classScores)
+amITheBest(myScore: 100, classScores: classScores)
+
+// BLACK DIAMOND
+listEachStudentIOutScored(myScore: 97, classScores: namedTestScores)
+listEachStudentIOutScored(myScore: 7, classScores: namedTestScores)
