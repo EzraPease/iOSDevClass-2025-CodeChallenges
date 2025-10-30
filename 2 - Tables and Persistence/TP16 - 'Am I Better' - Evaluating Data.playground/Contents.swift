@@ -20,8 +20,8 @@ import Foundation
 
 
 func amITheBest(myScore: Int, classScores: [Int]) -> Bool {
-    let highestScore = classScores.max() ?? 0
-    if highestScore < myScore {
+    let highestScore = classScores.max() ?? 0 // Storing the highest value of classScores
+    if highestScore < myScore { // Output logic
         print("Congrats!! You are the best! The highest score was \(highestScore), and yours was \(myScore)")
         return true
     }
@@ -29,14 +29,15 @@ func amITheBest(myScore: Int, classScores: [Int]) -> Bool {
     return false
 }
 
+// BLACK DIAMOND FUNCTION
 func listEachStudentIOutScored(myScore: Int, classScores: [String : Int]) -> [String] {
-    var studentsYouBeat: [String] = []
+    var studentsYouBeat: [String] = [] // Stored names of students with a lower score than "myScore"
     for index in classScores {
-        if index.value < myScore {
+        if index.value < myScore { // Checks which score is higher
             studentsYouBeat.append(index.key)
         }
     }
-    if studentsYouBeat.isEmpty {
+    if studentsYouBeat.isEmpty { // Output logic
         print("Sorry, you did not out score anyone")
         
     } else {
@@ -47,6 +48,8 @@ func listEachStudentIOutScored(myScore: Int, classScores: [String : Int]) -> [St
 
 
 let classScores = [80,39,90,88,68,78,39,99]
+
+// BLACK DIAMOND DICTIONARY
 let namedTestScores: [String: Int] = [
     "Alice": 92,
     "Brandon": 85,
