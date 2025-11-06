@@ -18,3 +18,34 @@
     //  Input: 4, Output: [1, 4, 16, 64, 256]
 
 import Foundation
+
+
+func powerOfTwo(input: Int) -> [Int] {
+    var results: [Int] = []
+    
+    for exponent in 0...input {
+        let value = pow(2, Double(exponent))
+        results.append(Int(value))
+    }
+    print(results)
+    return results
+}
+
+
+powerOfTwo(input: 10)
+
+
+// BLACK DIAMOND I guess?
+func toThePower(input: Int) -> [Int] {
+    var results: [Int] = []
+    
+    for exponent in 0...input {
+        let value = pow(Double(input), Double(exponent))
+        results.append(Int(value))
+    }
+    print(results)
+    return results
+}
+
+toThePower(input: 10)
+
