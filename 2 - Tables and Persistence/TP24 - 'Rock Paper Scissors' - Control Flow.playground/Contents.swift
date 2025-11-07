@@ -31,6 +31,14 @@ enum RockPaperScissorsAnswers {
 }
 
 func rockPaperScissors(player1 input1: RockPaperScissorsAnswers, player2 input2: RockPaperScissorsAnswers) {
+    
+    
+    // Example Option on how to codence the switch statments
+//    switch (input1, input2) {
+//    case (.rock, .paper), (.paper, .scissors):
+//        print("Player 2 wins")
+//    }
+    
     switch input1 {
     case .rock:
         switch input2 {
@@ -38,12 +46,10 @@ func rockPaperScissors(player1 input1: RockPaperScissorsAnswers, player2 input2:
             print("Its a tie!")
         case .paper:
             print("Player 2 wins!")
-        case .scissors:
+        case .scissors, .lizard:
             print("Player 1 wins!")
         case .spock:
             print("Player 2 wins!")
-        case .lizard:
-            print("Player 1 wins!")
         }
     case .paper:
         switch input2 {
