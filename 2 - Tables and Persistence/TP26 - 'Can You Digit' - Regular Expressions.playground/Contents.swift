@@ -23,3 +23,48 @@
     //  3. A digit within a string: "abc7xyz" should return true.
 
 import Foundation
+
+
+enum Errors: Error {
+    case notANumber(String)
+    case emptyInput(String)
+    case tooManyCharacters(String)
+}
+
+
+func isSingleDigit(input: String) throws -> Bool {
+    guard !input.isEmpty else { throw Errors.emptyInput("INVALID INPUT - input is empty (Input - false)") } // Checks if the input is empty
+    guard input.count == 1 else { throw Errors.tooManyCharacters("INVALID INPUT - Too many characters (Input - false)") } // Checks if the input is exactly 1
+    
+    if let intInput = Int(input) { // Outputs if the input string is the correct format and type
+        print(true) // Prints opposite of false :3
+        return true
+    } else {
+        throw Errors.notANumber("INVALID INPUT - Not a number (Input - false)") // The default error is input isn't a number
+    }
+}
+
+
+do {
+    try isSingleDigit(input: "1")
+} catch {
+    print(error)
+}
+do {
+    try isSingleDigit(input: "hi")
+} catch {
+    print(error)
+}
+do {
+    try isSingleDigit(input: "a")
+} catch {
+    print(error)
+}
+do {
+    try isSingleDigit(input: "7")
+} catch {
+    print(error)
+}
+
+
+
