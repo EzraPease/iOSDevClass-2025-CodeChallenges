@@ -27,3 +27,59 @@
     //  Ensure that the function still considers the margin when comparing the rounded values.
 
 import Foundation
+
+enum Errors: Error {
+    case defaultError(String)
+}
+
+func ballparkCompare(a: Int, b: Int, optionalMargin: Int?) throws -> Int {
+    let margin = optionalMargin ?? 0
+        if a - b < margin || b - a < margin { // A is within margin
+            return 0
+        } else if a < b { // a is less than b
+            return -1
+        } else if a > b { // a is greater than b
+            return 1
+        } else {
+            throw Errors.defaultError("To be honest Idk what you put to get this error")
+        }
+}
+
+do {
+    try print(ballparkCompare(a: 5, b: 10, optionalMargin: 5))
+} catch {
+    print(error)
+}
+do {
+    try print(ballparkCompare(a: 1, b: 5, optionalMargin: nil))
+} catch {
+    print(error)
+}
+do {
+    try print(ballparkCompare(a: 4241, b: 1556, optionalMargin: 8))
+} catch {
+    print(error)
+}
+
+
+
+// BLACK DAIMOND - Incomplete
+enum roundingParameters {
+    case up
+    case down
+    case nearest
+}
+
+
+func ballparkCompareBlackDiamond(a: Int, b: Int, optionalMargin: Int?, rounding: roundingParameters?, roundValue: Int?) throws -> Int {
+    let margin = optionalMargin ?? 0
+        if a - b < margin || b - a < margin { // A is within margin
+            return 0
+        } else if a < b { // a is less than b
+            return -1
+        } else if a > b { // a is greater than b
+            return 1
+        } else {
+            throw Errors.defaultError("To be honest Idk what you put to get this error")
+        }
+}
