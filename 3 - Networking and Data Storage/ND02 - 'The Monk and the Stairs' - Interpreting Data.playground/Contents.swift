@@ -15,3 +15,51 @@
     //  Suzuki wants to know which days of the week he climbed more stairs on average. Assuming the input array's contents are organized as [sunday, monday, tuesday, wednesday, thursday, friday, saturday], find the average number of stairs climbed for each day, then output a string of the weekdays, presenting them in order highest to lowest average (i.e. "tuesday, friday, wednesday, thursday, monday, saturday, sunday")
 
 import Foundation
+
+
+
+let sunday: [Int] =    [1200, 1340, 980, 1500, 1100, 1600, 1400]
+let monday: [Int] =    [2000, 2200, 2100, 2300, 2500, 2400, 2600]
+let tuesday: [Int] =   [1800, 1750, 1900, 2000, 1950, 2050, 2100]
+let wednesday: [Int] = [1700, 1650, 1800, 1850, 1900, 1950, 2000]
+let thursday: [Int] =  [1600, 1700, 1750, 1800, 1850, 1900, 1950]
+let friday: [Int] =    [2200, 2250, 2300, 2350, 2400, 2450, 2500]
+let saturday: [Int] =  [1500, 1550, 1600, 1650, 1700, 1750, 1800]
+let week: [[Int]] = [sunday] + [monday] + [tuesday] + [wednesday] + [thursday] + [friday] + [saturday]
+
+
+let example1 = [1, 2, 3]
+let example2 = [4, 5, 6]
+let exampleWeek = [example1] + [example2]
+
+
+
+func stairsIn20YearsByDay(days: [[Int]]) -> Int {
+    days.flatMap{ $0 }.reduce(0, +) * 20
+}
+
+
+print(stairsIn20YearsByDay(days: week))
+print(stairsIn20YearsByDay(days: exampleWeek))
+
+
+
+// BLACK DIAMOND
+func averageStairsPerDay(days: [[Int]]) {
+    var result: [Int] = []
+    
+    for dayOfTheWeek in days {
+        let count = dayOfTheWeek.count
+        let addedDay = dayOfTheWeek.reduce(0, +)
+        
+        let dayResult = addedDay / count
+        result.append(dayResult)
+        print(result)
+    }
+    return result.sort(by: >)
+}
+
+print("\n----------------")
+averageStairsPerDay(days: week)
+print("-----------------")
+averageStairsPerDay(days: exampleWeek)
