@@ -18,3 +18,42 @@
     //  Additionally, create a second function that reverses the resulting string from the first function (e.g. "SSttrriinngg" becomes "ggnniirrttSS").
 
 import Foundation
+
+
+
+
+func stringLonger(input: String) -> String {
+    var result = ""
+    for character in input {
+       result += String(repeating: character, count: 2)
+    }
+    print(result)
+    return result
+}
+
+
+
+stringLonger(input: "Hello")
+
+
+
+// BLACK DIAMOND
+func customStringLonger(input: String, count: Int = 2) -> String {
+    var result = ""
+    for character in input {
+       result += String(repeating: character, count: count)
+    }
+    print(result)
+    return result
+}
+
+func reverseString(input: String) -> String {
+    String(input.reversed())
+}
+
+
+customStringLonger(input: "Hello Again")
+customStringLonger(input: "12345", count: 5)
+print("\n")
+
+print(reverseString(input: customStringLonger(input: "This is Reversed", count: 3)))
