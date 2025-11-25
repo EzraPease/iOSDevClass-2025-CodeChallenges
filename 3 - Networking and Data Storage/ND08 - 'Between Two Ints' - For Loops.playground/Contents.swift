@@ -18,3 +18,36 @@
     //  Output: [3, 6, 9]
 
 import Foundation
+
+
+
+
+func betweenTwoInts(from inputA: Int, to inputB: Int) -> [Int] {
+    let sortedInputs = [inputA, inputB].sorted(by: <)
+    var results: [Int] = []
+    for intRange in sortedInputs[0]...sortedInputs[1] {
+        results.append(intRange)
+    }
+    print(results)
+    return results
+}
+
+betweenTwoInts(from: 1, to: 10)
+print("-----------------")
+
+
+// BLACK DIAMOND
+func betweenTwoInts(from inputA: Int, to inputB: Int, divisor: Int) -> [Int] {
+    let sortedInputs = [inputA, inputB].sorted(by: <)
+    var results: [Int] = []
+    for intRange in sortedInputs[0]...sortedInputs[1] {
+        if intRange % divisor == 0 {
+            results.append(intRange)
+        }
+    }
+    print(results)
+    return results
+}
+
+betweenTwoInts(from: 1, to: 10, divisor: 3)
+betweenTwoInts(from: 1, to: 100, divisor: 10)
