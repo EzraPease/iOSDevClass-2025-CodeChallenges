@@ -28,7 +28,7 @@ print(filterString("Ala3s, poo4r Yoric888k! I kn3ew h41im, H0or4at1i0o."))
 
 // BLACK DIAMOND
 func filteredStringWithNumbers(_ stringInput: String) -> String {
-    // Insert code here :)
+    // Insert black diamond code here :)
     return "This is a string with numbers -> 123 👍"
 }
 
