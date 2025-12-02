@@ -29,3 +29,26 @@
     //  Create more calculators for different animals. You could differentiate between large and small dogs, calculate parakeet or Galapagos tortoise years, or any other species you choose. Calculate them how you see fit.
 
 import Foundation
+
+
+
+
+func convertToDogCatYears(humanYears: Int) -> (Int, Int, Int) {
+    var catYears = 0
+    var dogYears = 0
+    switch humanYears {
+    case 1:
+        catYears = 15
+        dogYears = 15
+    case 2:
+        catYears = 24
+        dogYears = 24
+    default:
+        catYears = 24 + (4 * (humanYears - 2))
+        dogYears = 24 + (5 * (humanYears - 2))
+    }
+    return (humanYears, catYears, dogYears)
+}
+
+
+print(convertToDogCatYears(humanYears: 9))
