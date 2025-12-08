@@ -50,5 +50,8 @@ func convertToDogCatYears(humanYears: Int) -> (Int, Int, Int) {
     return (humanYears, catYears, dogYears)
 }
 
-
+print("Human Years, Cat Years, Dog Years")
 print(convertToDogCatYears(humanYears: 9))
+print(convertToDogCatYears(humanYears: 16))
+print(convertToDogCatYears(humanYears: 10))
+print(convertToDogCatYears(humanYears: 2))

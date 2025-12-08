@@ -18,3 +18,15 @@
     //  Create another function, once again taking a Date as a parameter and comparing it to the current Date. This time, output whether it is within the same hour of the day as the given Date (i.e., the Date parameter is at 9:45 and it is currently 9:15, return true as it is 9:00)
 
 import Foundation
+
+
+
+
+func isItToday(_ date: Date) -> Bool {
+    Calendar.current.isDateInToday(date) ? true : false
+}
+
+let oneHourAgo = Date().addingTimeInterval(-3600)
+let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: Date())!
+print(isItToday(oneHourAgo))
+print(isItToday(tomorrow))

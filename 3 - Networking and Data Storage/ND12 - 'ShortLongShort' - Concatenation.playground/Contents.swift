@@ -19,3 +19,27 @@
     //  Create a function that can split back apart the shortlongshort strings, returning them in a Tuple of type (String, String)
 
 import Foundation
+
+
+enum Errors: Error {
+    case sameCount(String)
+}
+
+
+
+func shortLongShort(inputA: String, inputB: String) throws -> String {
+    guard inputA.count != inputB.count else { throw Errors.sameCount("Inputs must be separate lengths") }
+    var longString = inputA
+    var shortString = inputB
+    
+    if inputA.count < inputB.count {
+        longString = inputB
+        shortString = inputA
+    }
+    return shortString + longString + shortString
+}
+
+
+try print(shortLongShort(inputA: "hey", inputB: "Howdy"))
+try print(shortLongShort(inputA: "after", inputB: "time"))
+try print(shortLongShort(inputA: "", inputB: "Hello"))
