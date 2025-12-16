@@ -16,3 +16,34 @@
     //  If there are too few positive integers left after excluding the specified numbers, return nil.
 
 import Foundation
+
+
+
+
+func sumOfSmallest(in input: Array<Int>) -> Int? {
+    var variableInput = input
+    guard variableInput.count >= 2 else { return nil }
+    var currentLowest = variableInput[0]
+    var result: [Int] = []
+    
+    while result.count < 2 {
+        for number in variableInput {
+            if number < currentLowest {
+                currentLowest = number
+            }
+        }
+        result.append(currentLowest)
+        if let index = variableInput.firstIndex(of: currentLowest) {
+            variableInput.remove(at: index)
+        }
+        currentLowest = variableInput[0]
+        
+    }
+    return result[0] + result[1]
+}
+
+
+
+
+print(sumOfSmallest(in: [1, 2, 3, 4, 5, -2, -19, 0]))
+print(sumOfSmallest(in: [5, 4, 3, 2, 0]))
