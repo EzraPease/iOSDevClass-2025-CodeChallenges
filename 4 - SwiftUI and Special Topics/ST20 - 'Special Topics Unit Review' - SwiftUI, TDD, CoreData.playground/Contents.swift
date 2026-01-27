@@ -7,15 +7,15 @@
 import Foundation
 
 //  Question 1: What are the major differences, advantages and disadvantages of SwiftUI over UIKit?
-
+// SwiftUI is more modern and for the most part better than UIKit, however UIKit has some things you can do that you can't do in SwiftUI, so depending on what you need to do one may be better than the other SwiftUI (Declarative) / UIKit (Imperative)
 
 
 //  Question 2: Give a brief overview of process of using Test Driven Development. What are the steps? What are its philosophies?
-
+// Arrange, Act, Assert: Set the data, Utilize the data, test the result
 
 
 //  Question 3: What is CoreData? What is the process of setting it up and using it?
-
+// IDK
 
 
 //  ⛋ Black Diamond Question: What is SwiftData? How does it relate to CoreData? What are its advantages and disadvantages?
