@@ -18,3 +18,40 @@
     //  Write two more functions that convert a string into PascalCase and kebab-case, respectively.
 
 import Foundation
+
+func toCamelCase(input: String) -> String {
+    var startingValue = input
+    var result = ""
+    var capitalizeNextLetter = false
+    
+    for character in startingValue {
+        if character == "_" {
+            capitalizeNextLetter = true
+        } else {
+            if capitalizeNextLetter {
+                result.append(character.uppercased())
+            } else {
+                result.append(character)
+            }
+            capitalizeNextLetter = false
+        }
+    }
+    return result
+}
+
+func toSnakeCase(input: String) -> String {
+   var result = ""
+    
+    for character in input {
+        if character.isUppercase {
+            result.append("_")
+            result.append(character.lowercased())
+        } else {
+            result.append(character)
+        }
+    }
+    return result
+}
+
+print(toCamelCase(input: "this_should_be_camel_case"))
+print(toSnakeCase(input: "thisShouldBeSnakeCase"))
