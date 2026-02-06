@@ -20,3 +20,49 @@
     //  Input: (fibSeq(n: 4, i: 7), Output: [8, 13, 21, 34]
 
 import Foundation
+
+
+
+// MARK: Entire Fibonacci Sequence
+func fibiSequence(number: Int) -> [Int] {
+    var result: [Int] = []
+    guard number != 0 else { return result }
+    
+    // Default values for the first 2 indexs
+    for index in 0...number - 1 {
+        if index == 0 || index == 1 {
+            result.append(index)
+        } else {
+            // Building the rest of the sequence array
+            result.append((result[index - 1]) + (result[index - 2]))
+        }
+    }
+    
+    print("Full Sequence: \(result)")
+    return result
+}
+
+fibiSequence(number: 4)
+fibiSequence(number: 7)
+fibiSequence(number: 0)
+
+
+// MARK: BLACK DIAMOND - Fibonacci Sequence at a set point
+print("\nBLACK DIAMOND")
+func setRangeFibiSequence(sequenceAmount: Int, startPoint: Int) -> [Int] {
+    var result: [Int] = []
+    let sequenceEndRange = sequenceAmount - 1
+    let presetResult = fibiSequence(number: startPoint + sequenceEndRange) // Sets the starting array
+    
+    // Appends Int's into result based on the provided range
+    for index in startPoint...startPoint + sequenceEndRange {
+        result.append(presetResult[index - 1])
+    }
+    
+    print("Set Range Result: \(result)\n")
+    return result
+}
+
+setRangeFibiSequence(sequenceAmount: 4, startPoint: 7)
+setRangeFibiSequence(sequenceAmount: 5, startPoint: 13)
+setRangeFibiSequence(sequenceAmount: 6, startPoint: 4)
