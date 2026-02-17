@@ -13,5 +13,14 @@
 
 // MARK: Student response
 /*
+ Notes:
+ - Potential Solution:
+ fill the 5 jug container
+ then fill up the 3 quart jug with the water from the 5 quart jug with a marker, note how much water remains in the 5 quart jug with a line
+ empty the 3 quart jug and pour the now remaining 2 quarts from the 5 quart jug in the 3 quart jug
+ fill the 5 quart jug to the previously marked line (should be 2 quarts)
+ now add the water from the 3 quart jug into the 5 quart jug.
+ 
+ Congrats! You now have 4 quarts of water
  
  */
