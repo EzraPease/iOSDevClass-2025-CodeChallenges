@@ -56,5 +56,18 @@
 import Foundation
 
 func cleanUp(_ input: [String], _ type: String) -> [[String]] {
-    return []
+    var result: [[String]] = []
+    
+    for file in input {
+        switch type.lowercased() {
+        case "prefix":
+            
+        case "suffix":
+            
+        default:
+            return []
+        }
+    }
+    
+    return result
 }
