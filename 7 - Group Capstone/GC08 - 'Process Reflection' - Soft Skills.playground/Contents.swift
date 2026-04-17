@@ -20,3 +20,11 @@
     9. What are your thoughts on Agile development? Would you prefer to work at a company who embraces is it?
     10. Describe a professional coder beginning a long-term project. What structures, routines, and tools should they have in place to ensure long term success?
 */
+
+/*
+ 
+ 4. I manage my code via Git by the idea of "If it can be commited, commit it!" I have found from experience that it makes my life much easier when I have more versions to refrence back to when either I just need to undo something, or need to restore due to a bug or other unforseen issue.
+ 
+ 8. Take your time to undertstand the basics of whatever feature you are learning or using. Down the line it will make you faster as well as allow you to better understand your own, and others code!
+ 
+ */
