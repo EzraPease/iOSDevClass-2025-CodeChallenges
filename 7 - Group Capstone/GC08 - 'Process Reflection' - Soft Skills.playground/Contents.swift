@@ -25,6 +25,8 @@
  
  4. I manage my code via Git by the idea of "If it can be commited, commit it!" I have found from experience that it makes my life much easier when I have more versions to refrence back to when either I just need to undo something, or need to restore due to a bug or other unforseen issue.
  
+ 7. Make sure to take breaks, for 2 reasons. 1 - It helps break stuff up and give you a chance to recharge your thinking ability and avoid burn out. 2 - It allows you to have a chance to think out of the box about solutions while not looking at the code itself. Its helped me on several occasions.
+ 
  8. Take your time to undertstand the basics of whatever feature you are learning or using. Down the line it will make you faster as well as allow you to better understand your own, and others code!
  
  */
